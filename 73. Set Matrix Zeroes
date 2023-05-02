@@ -1,0 +1,37 @@
+//brute force approach
+class Solution {
+    public void setZeroes(int[][] matrix) {
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix[0].length;j++){
+                if(matrix[i][j] == 0){
+                    setRow(i,matrix);
+                    setCol(j,matrix);
+                }
+            }
+        }
+        set(matrix);                   //-1 ==> 0
+    }
+    public void setRow(int i, int[][] matrix){
+        for(int j=0;j<matrix[0].length;j++){
+            if(matrix[i][j] != 0){
+                matrix[i][j] = 'a';
+            }
+        }
+    }
+    public void setCol(int j, int[][] matrix){
+        for(int i=0;i<matrix.length;i++){
+            if(matrix[i][j] != 0){
+                matrix[i][j] = 'a';
+            }
+        }
+    }
+    public void set(int[][] matrix) {
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix[0].length;j++){
+                if(matrix[i][j] == 'a'){
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+    }
+}
