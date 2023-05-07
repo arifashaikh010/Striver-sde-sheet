@@ -8,7 +8,7 @@ class Solution {
                 return false;
             }
         }
-        return true;
+        return true;                                          //complete for loop is executed i.e. array is sorted
     }
 }
 
