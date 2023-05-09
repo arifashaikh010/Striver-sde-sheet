@@ -44,7 +44,27 @@ class Solution {
     }
 }
 
+//---------------------------------------- optimal TC:O(2n) & SC:O(1) -------------------------------------------------------------
 
+class Solution{
+     void leftRotate(long arr[], int k,int n)
+    {
+        k=k%n;                   //VIMP: rotate by k=n => original array
+        reverse(arr, 0, k-1);
+        reverse(arr, k, n-1);
+        reverse(arr, 0, n-1);
+    }
+    
+    void reverse(long arr[], int start, int end){
+        while(start < end){
+            long temp = arr[start];    //swap
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
+}
 /*
 
 Example 1:
