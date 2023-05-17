@@ -1,0 +1,89 @@
+//---------------------------------- brute force TC:O(nlogn+mlogn)+O(n+m) SC:O(n+m)+O(n+m) --------------------------------------------
+class Solution
+{
+    public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m)
+    {
+        Set<Integer> set = new HashSet<Integer> (); 
+        for(int i=0;i<arr1.length;i++){
+            set.add(arr1[i]);
+        }
+        for(int i=0;i<arr2.length;i++){
+            set.add(arr2[i]);
+        }
+        ArrayList<Integer> ans = new ArrayList<Integer>();
+        for (int it: set){
+            ans.add(it);
+        }
+        Collections.sort(ans);
+        return ans;
+    }
+}
+
+//---------------------------------- optimal TC: O(n+m) SC:O(n+m) ----------------------------------------------
+class Solution
+{
+    public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m)
+    {
+        int i=0, j=0;
+        ArrayList <Integer> union = new ArrayList<Integer>();
+        while(i<n && j<m){
+            if(arr1[i]<=arr2[j]){
+                if(union.size()==0 || union.get(union.size()-1) != arr1[i]){
+                    union.add(arr1[i]);
+                }
+                i++;
+            }
+            else{
+                if(union.size()==0 || union.get(union.size()-1) != arr2[j]){
+                    union.add(arr2[j]);
+                }
+                j++;
+            }
+        }
+        
+        //array 1 is exhuasted / ended / completed
+        while(j<m){ 
+            if(union.size()==0 || union.get(union.size()-1) != arr2[j]){
+                union.add(arr2[j]);
+            }
+            j++;
+        }
+        
+        //array 2 is exhuasted / ended / completed
+        while(i<n){
+            if(union.size()==0 || union.get(union.size()-1) != arr1[i]){
+                union.add(arr1[i]);
+            }
+            i++;
+        }
+        return union;
+    }
+}
+
+/*
+Example 1:
+Input: 
+n = 5, arr1[] = {1, 2, 3, 4, 5}  
+m = 3, arr2 [] = {1, 2, 3}
+Output: 1 2 3 4 5
+Explanation: Distinct elements including 
+both the arrays are: 1 2 3 4 5.
+ 
+
+Example 2:
+Input: 
+n = 5, arr1[] = {2, 2, 3, 4, 5}  
+m = 5, arr2[] = {1, 1, 2, 3, 4}
+Output: 1 2 3 4 5
+Explanation: Distinct elements including 
+both the arrays are: 1 2 3 4 5.
+ 
+
+Example 3:
+Input:
+n = 5, arr1[] = {1, 1, 1, 1, 1}
+m = 5, arr2[] = {2, 2, 2, 2, 2}
+Output: 1 2
+Explanation: Distinct elements including 
+both the arrays are: 1 2.
+*/
