@@ -1,0 +1,54 @@
+class Solution{
+    static double switchCase(int choice, List<Double> arr){
+        double ans=0.0;
+        switch(choice){
+            case 1:
+                ans=Math.PI*arr.get(0)*arr.get(0);
+                break;
+                
+            case 2:
+                ans=arr.get(0)*arr.get(1);
+                break;
+                
+        }
+        return ans;
+    }
+}
+
+/*
+Example 1:
+Input: 
+choice = 1, 
+R = 5
+Output: 78.53981633974483
+Explaination: The choice is 1. 
+So we have to calculate the area of the circle.
+ 
+
+Example 2:
+Input: 
+choice = 2, 
+L = 5, B = 10
+Output: 50
+Explaination: Here we have to calculate the 
+area of the rectangle.
+*/
+
+/*
+Learnings:
+
+------------------------------------------------
+switch(){
+case 1:
+}
+
+NOT
+switch(){
+case '1':
+}
+
+------------------------------------------------
+Dont use pi value as 3.14
+Instead use
+'Math.PI' 
+*/
