@@ -1,0 +1,45 @@
+class Solution {
+    static int dataTypeSize(String str) {
+        int ans=0;
+        switch(str){
+            case"Character":
+                ans=1;
+                break;
+                
+            case"Integer":
+                ans=4;
+                break;
+            
+            case"Float":
+                ans=4;
+                break;
+                
+            case"Long":
+                ans=8;
+                break;
+                
+            case"Double":
+                ans=8;
+                break;
+                
+            default:
+                ans=-1;
+                break;
+            
+        }
+        return ans;
+    }
+}
+
+/*
+Data Type - Character, Integer, Long, Float and Double
+
+Example 1:
+
+Input: Character
+Output: 1
+Example 2:
+
+Input: Integer
+Output: 4
+*/
