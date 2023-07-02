@@ -1,0 +1,30 @@
+//Print GFG n times without the loop.
+
+class Solution {
+
+    /*void printGfg(int N) {
+        if(N == 0){
+            return;
+        }
+        System.out.print("GFG ");
+        N=N-1;
+        printGfg(N);
+    }*/
+    int i=0;
+    void printGfg(int N) {
+        if(N == i){
+            return;
+        }
+        System.out.print("GFG ");
+        i=i+1;
+        printGfg(N);
+    }
+}
+
+/*
+Example:
+Input:
+5
+Output:
+GFG GFG GFG GFG GFG
+*/
