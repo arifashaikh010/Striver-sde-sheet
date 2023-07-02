@@ -1,0 +1,42 @@
+//simple
+class Solution
+{
+    int i=0;
+    public void printNos(int N)
+    {
+        if(N==i){
+            return;
+        }
+        i++;
+        System.out.print(i+" ");
+        printNos(N);
+    }
+}
+
+//--------------------------------------------- OR ---------------------------------------------
+//little difficult
+class Solution
+{
+    public void printNos(int N)
+    {
+        if(N==1){
+            System.out.print(1+" ");
+            return;
+        }
+        printNos(N-1);
+        System.out.print(N+" ");
+    }
+}
+
+
+/*
+Example 1:
+Input:
+N = 10
+Output: 1 2 3 4 5 6 7 8 9 10
+
+Example 2:
+Input:
+N = 5
+Output: 1 2 3 4 5
+*/
