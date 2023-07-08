@@ -1,0 +1,24 @@
+class Solution{
+    static ArrayList<Long> factorialNumbers(long N){
+        ArrayList<Long> ans = new ArrayList<>();
+        long fact1=1;
+        for(int i=1;i<=N;i++){
+            long facti=fact1*i;
+            if(facti<=N){
+                ans.add(facti);
+            }else{
+                break;
+            }
+            fact1=facti;
+        }
+        return ans;
+    }
+}
+
+/*
+Input: N = 3
+Output: 1 2
+
+Input: N = 6
+Output: 1 2 6
+*/
