@@ -1,0 +1,24 @@
+class Solution {
+    int isPalindrome(String S) {
+        int ans=1;
+        for(int i=0;i<S.length()/2;i++){
+            if(S.charAt(i)==S.charAt(S.length()-1-i)){
+                ans=1;
+            }else{
+                ans=0;
+                break;
+            }
+        }
+        return ans;
+    }
+};
+
+/*
+Input: S = "abba"
+Output: 1
+Explanation: S is a palindrome
+
+Input: S = "abc" 
+Output: 0
+Explanation: S is not a palindrome
+*/
