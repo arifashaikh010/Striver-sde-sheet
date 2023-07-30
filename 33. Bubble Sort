@@ -1,5 +1,6 @@
 //Push the max to the last by adjacent swaps
-//TC : O(N^2)
+//Avg worst case: TC : O(N^2)
+//Best case: TC : O(N)
 
 class Solution
 {
